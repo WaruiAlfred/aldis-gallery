@@ -1,0 +1,5 @@
+#ignored files and folders
+.env
+virtual/
+__pycache__
+db.sqlite3
