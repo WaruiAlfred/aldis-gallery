@@ -3,5 +3,57 @@
 {% block content %}
   <div class="container-fluid">
     <h1 class="text-center">My gallery</h1>
+
+    <!--Search forms-->
+    <div class="row">
+      <!--Filter images by category form-->
+      <div class="col-md-6">
+        <form action="{% url 'get_image_by_category' %}" role="search" class="">
+          <fieldset>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="images category" name="image_category">
+              <div class="form-group-btn">
+                <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+      <!--Filter images by location taken form-->
+      <div class="col-md-6">
+        <form action="{% url 'get_image_by_location' %}" role="search" class="">
+          <fieldset>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="location image was taken" name="image_location">
+              <div class="form-group-btn">
+                <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+
+    <div class="d-flex flex-row bd-highlight content">
+      {% for image_item in images %}
+        <div class="row">
+          <!--Displaying images and some info-->
+          <div class="image-section">
+            <div class="card">
+              {% if image_item.image %}
+                <a href="{% url 'get_image_by_id' image_item.id %}"><img src="{{image_item.image.url}}" class="img-responsive" alt="Image"></a>
+              {% endif %}
+              <h2 class="text-center">{{image_item.image_name}}</h2>
+              <p class="text-center">{{image_item.image_description}}</p>
+              <a class="text-center" href="{{image_item.image.url}}" target="_blank">Image link</a>
+            </div>
+          </div>
+        </div>
+      {% empty %}
+        <div class="row">
+          <h2 class="text-center">There are no images to display.</h2>
+        </div>
+      {% endfor %}
+    </div>
   </div>
 {% endblock content %}
