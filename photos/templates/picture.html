@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+
+    <!--Displaying image searched by id-->
+    <div class="row">
+      {% if id_image %}
+        <h3 class="text-center">Image for id "{{message}}"</h2>
+        {%for image in id_image%}
+          {% if image.image %}
+            <img src="{{image.image.url}}" class="img-responsive" alt="Image" style="height:600px;width:100%;"> 
+          {% endif %}
+          <h2 class="text-center">{{image.image_name}}</h2>
+          <p class="text-center">{{image.image_description}}</p>
+        {%endfor%}
+      {% else %}
+        <h3 class="text-center"><i>{{message}}</i></h3>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}
