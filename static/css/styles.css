@@ -1,0 +1,18 @@
+/*card styling*/
+.card{
+  width: 400px;
+  height: 100%;
+  padding: 5px;
+}
+
+/*home page styling*/
+.content{
+  padding: 7px;
+}
+.image-section{
+  margin: 7px;
+}
+img{
+  height: 20em;
+  width: 100%;
+}
