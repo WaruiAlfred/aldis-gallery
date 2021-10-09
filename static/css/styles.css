@@ -17,6 +17,21 @@
 }
 
 /*home page styling*/
+.page-header{
+  color: goldenrod;
+  font-size: 80px;
+}
+/* path {
+  fill: transparent;
+} */
+.search-forms{
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.search-input{
+  border-radius: 30px;
+}
 .content{
   padding: 7px;
 }
