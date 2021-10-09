@@ -123,3 +123,9 @@ class ImageTestClass(TestCase): #image test class
     found_images = Image.search_by_category(image_category[0])
     self.assertTrue(len(found_images)>=1)
     
+  def test_search_by_location(self): 
+    '''Function testing whether images of the same location are found'''
+    self.new_image.save_image()
+    image_location = Location.objects.filter(location = self.new_image.location_taken)
+    found_images = Image.search_by_location(image_location[0])
+    self.assertTrue(len(found_images)>=1)
