@@ -12,11 +12,15 @@
             <div class="row">
               <div class="image-section">
                 <div class="card">
-                  {% if image.image %}
-                    <a href="{% url 'get_image_by_id' image.id %}"><img src="{{image.image.url}}" class="img-responsive" alt="Image"></a>
-                  {% endif %}
-                  <h2 class="text-center">{{image.image_name}}</h2>
-                  <p class="text-center">{{image.image_description}}</p>
+                  <div class="img-image">
+                    {% if image.image %}
+                      <a href="{% url 'get_image_by_id' image.id %}"><img src="{{image.image.url}}" class="img-responsive" alt="Image"></a>
+                    {% endif %}
+                  </div>
+                  <div class="img-content">
+                    <h2>{{image.image_name}}</h2>
+                    <a href="{{image.image.url}}" target="_blank">Image link</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -36,11 +40,15 @@
             <div class="row">
               <div class="image-section">
                 <div class="card">
-                  {% if image.image %}
-                    <a href="{% url 'get_image_by_id' image.id %}"><img src="{{image.image.url}}" class="img-responsive" alt="Image"></a>
-                  {% endif %}
-                  <h2 class="text-center">{{image.image_name}}</h2>
-                  <p class="text-center">{{image.image_description}}</p>
+                  <div class="img-image">
+                    {% if image.image %}
+                      <a href="{% url 'get_image_by_id' image.id %}"><img src="{{image.image.url}}" class="img-responsive" alt="Image"></a>
+                    {% endif %}
+                  </div>
+                  <div class="img-content">
+                    <h2>{{image.image_name}}</h2>
+                    <a href="{{image.image.url}}" target="_blank">Image link</a>
+                  </div>
                 </div>
               </div>
             </div>
