@@ -2,16 +2,24 @@
 
 {% block content %}
   <div class="container-fluid">
-    <h1 class="text-center">My gallery</h1>
+    <h1 class="text-center page-header">ALDIS GALLERY</h1>
+    <!--<svg viewBox="0 0 300 300">
+      <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" />
+      <text width="500">
+        <textPath xlink:href="#curve" class="text-center page-header">
+          ALDIS GALLERY
+        </textPath>
+      </text>
+    </svg>-->
 
     <!--Search forms-->
-    <div class="row">
+    <div class="row search-forms">
       <!--Filter images by category form-->
       <div class="col-md-6">
         <form action="{% url 'get_image_by_category' %}" role="search" class="">
           <fieldset>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="images category" name="image_category">
+            <div class="form-group d-flex flex-row">
+              <input type="text" class="form-control search-input" placeholder="images category" name="image_category">
               <div class="form-group-btn">
                 <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
               </div>
@@ -20,11 +28,11 @@
         </form>
       </div>
       <!--Filter images by location taken form-->
-      <div class="col-md-6">
+      <div class="col-md-6 ">
         <form action="{% url 'get_image_by_location' %}" role="search" class="">
           <fieldset>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="location image was taken" name="image_location">
+            <div class="form-group d-flex flex-row">
+              <input type="text" class="form-control search-input" placeholder="location image was taken" name="image_location">
               <div class="form-group-btn">
                 <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
               </div>
