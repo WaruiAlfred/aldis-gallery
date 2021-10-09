@@ -73,3 +73,8 @@ img{
     margin: 5px;
   }
 }
+/*picture template*/
+.image-details{
+  padding: 7px;
+  border-radius: 20px;
+}
