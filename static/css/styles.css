@@ -11,7 +11,7 @@
 }
 /*card styling*/
 .card{
-  width: 400px;
+  width: 350px;
   height: 100%;
   padding: 5px;
 }
@@ -34,9 +34,11 @@
 }
 .content{
   padding: 7px;
+  display: flex;
+  flex-flow: row wrap;
 }
 .image-section{
-  margin: 7px;
+  margin: 5px;
 }
 img{
   height: 20em;
@@ -48,7 +50,7 @@ img{
 .img-content{
   width: 150px;
   position: absolute;
-  margin-top: 57%;
+  margin-top: 60%;
   margin-left: 30%;
   text-align: center;
   color: goldenrod;
@@ -61,4 +63,13 @@ img{
   height: 50px;
   padding-left: 5px;
   padding-right: 5px;
+}
+@media screen  and (max-width: 700px) {
+  body{
+    overflow-x: hidden;
+  }
+  .form-group{
+    width: 50%;
+    margin: 5px;
+  }
 }
