@@ -110,4 +110,9 @@ class ImageTestClass(TestCase): #image test class
     images = Image.objects.all()
     self.assertTrue(len(images)==0)
     
- 
+  def test_search_by_id(self): 
+    '''Function testing whether the search by id method is returning a value'''
+    self.new_image.save_image()
+    found_image = Image.search_by_id(self.new_image.id)
+    self.assertTrue(len(found_image)==1)
+    
