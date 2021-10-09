@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap');
+*{
+  font-family: 'Scheherazade New', serif;
+}
+
+/*navbar*/
+.page-logo{
+  height: 5em;
+  width: 5em;
+  border-radius: 50%;
+}
 /*card styling*/
 .card{
   width: 400px;
