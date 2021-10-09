@@ -116,3 +116,10 @@ class ImageTestClass(TestCase): #image test class
     found_image = Image.search_by_id(self.new_image.id)
     self.assertTrue(len(found_image)==1)
     
+  def test_search_by_category(self): 
+    '''Function testing whether images under a certain category are gotten'''
+    self.new_image.save_image()
+    image_category = Category.objects.filter(category_name = self.new_image.category)
+    found_images = Image.search_by_category(image_category[0])
+    self.assertTrue(len(found_images)>=1)
+    
