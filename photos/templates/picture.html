@@ -4,15 +4,31 @@
   <div class="container">
 
     <!--Displaying image searched by id-->
-    <div class="row">
+    <div class="row mb-5">
       {% if id_image %}
-        <h3 class="text-center">Image for id "{{message}}"</h2>
+        <h3 class="text-center">Details for image with id "{{message}}"</h2>
         {%for image in id_image%}
-          {% if image.image %}
-            <img src="{{image.image.url}}" class="img-responsive" alt="Image" style="height:600px;width:100%;"> 
-          {% endif %}
-          <h2 class="text-center">{{image.image_name}}</h2>
-          <p class="text-center">{{image.image_description}}</p>
+          <div class="row">
+            <div class="col-md-8">
+              {% if image.image %}
+                <img src="{{image.image.url}}" class="img-responsive" alt="Image" style="height:500px;width:100%;border-radius:20px;"> 
+              {% endif %}
+            </div>
+            <div class="col-md-4">
+              <div class="card image-details">
+                <p><b>Name:</b> {{image.image_name}}</p>
+                <hr>
+                <p><b>Category:</b> {{image.category.category_name}}</p>
+                <hr>
+                <p><b>Location taken:</b> {{image.location_taken.location}}</p>
+                <hr>
+                <p><b>Date taken:</b> {{image.location_taken.date}}</p>
+                <hr>
+                <p><b>Description:</b> {{image.image_description}}</p>
+                <hr>
+              </div>
+            </div>
+          </div>
         {%endfor%}
       {% else %}
         <h3 class="text-center"><i>{{message}}</i></h3>
